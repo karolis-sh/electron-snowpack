@@ -1,0 +1,57 @@
+{
+  "name": "template-javascript",
+  "version": "0.0.0",
+  "private": true,
+  "keywords": [],
+  "repository": "git@github.com:karolis-sh/template-javascript.git",
+  "license": "MIT",
+  "author": "Karolis Šarapnickis",
+  "main": "index.js",
+  "scripts": {
+    "commit": "npx cz",
+    "format": "run-p format:*",
+    "format:package.json": "sort-package-json package.json",
+    "format:prettier": "prettier --write '**/*.*'",
+    "lint": "run-p lint:*",
+    "lint:js": "eslint .",
+    "lint:md": "markdownlint-cli2 '**/*.md' '!node_modules' '!**/node_modules'",
+    "qa": "run-p lint",
+    "release": "yarn && run-s qa && standard-version --no-verify && git push --follow-tags --no-verify && npm publish"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "yarn qa"
+    }
+  },
+  "lint-staged": {
+    "**/package.json": [
+      "sort-package-json"
+    ],
+    "*.{json,md,yml}": [
+      "pretty-quick --staged"
+    ],
+    "*.{js}": [
+      "eslint --fix"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@k.sh/eslint-config": "^1.18.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
+    "markdownlint-cli2": "^0.0.10",
+    "npm-run-all": "^4.1.5",
+    "pretty-quick": "^3.0.2",
+    "sort-package-json": "^1.46.0",
+    "standard-version": "^9.0.0"
+  }
+}
