@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "keywords": [],
-  "repository": "git@github.com:karolis-sh/electron-snowpack.git",
+  "repository": "karolis-sh/electron-snowpack",
   "license": "MIT",
   "author": "Karolis Šarapnickis",
   "workspaces": [

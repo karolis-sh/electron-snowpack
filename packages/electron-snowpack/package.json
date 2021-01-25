@@ -1,0 +1,13 @@
+{
+  "name": "electron-snowpack",
+  "version": "0.0.0",
+  "keywords": [
+    "electron",
+    "snowpack",
+    "esbuild"
+  ],
+  "repository": "karolis-sh/electron-snowpack",
+  "license": "MIT",
+  "author": "Karolis Šarapnickis",
+  "main": "index.js"
+}

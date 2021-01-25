@@ -1,0 +1,12 @@
+{
+  "name": "hello-world",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {},
+  "devDependencies": {
+    "electron": "^11.2.1",
+    "electron-builder": "^22.9.1",
+    "electron-snowpack": "*"
+  }
+}
