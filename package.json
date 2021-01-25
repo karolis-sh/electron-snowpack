@@ -1,22 +1,24 @@
 {
-  "name": "template-javascript",
+  "name": "electron-snowpack",
   "version": "0.0.0",
   "private": true,
   "keywords": [],
-  "repository": "git@github.com:karolis-sh/template-javascript.git",
+  "repository": "git@github.com:karolis-sh/electron-snowpack.git",
   "license": "MIT",
   "author": "Karolis Šarapnickis",
-  "main": "index.js",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
   "scripts": {
     "commit": "npx cz",
     "format": "run-p format:*",
-    "format:package.json": "sort-package-json package.json",
+    "format:package.json": "sort-package-json package.json packages/*/package.json examples/*/package.json",
     "format:prettier": "prettier --write '**/*.*'",
     "lint": "run-p lint:*",
     "lint:js": "eslint .",
     "lint:md": "markdownlint-cli2 '**/*.md' '!node_modules' '!**/node_modules'",
-    "qa": "run-p lint",
-    "release": "yarn && run-s qa && standard-version --no-verify && git push --follow-tags --no-verify && npm publish"
+    "qa": "run-p lint"
   },
   "husky": {
     "hooks": {
@@ -51,7 +53,6 @@
     "markdownlint-cli2": "^0.0.13",
     "npm-run-all": "^4.1.5",
     "pretty-quick": "^3.1.0",
-    "sort-package-json": "^1.48.1",
-    "standard-version": "^9.1.0"
+    "sort-package-json": "^1.48.1"
   }
 }
