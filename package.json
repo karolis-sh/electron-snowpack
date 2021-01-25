@@ -1,22 +1,30 @@
 {
-  "name": "template-javascript",
+  "name": "electron-snowpack",
   "version": "0.0.0",
   "private": true,
-  "keywords": [],
-  "repository": "git@github.com:karolis-sh/template-javascript.git",
+  "keywords": [
+    "electron",
+    "snowpack",
+    "esbuild"
+  ],
+  "repository": "karolis-sh/electron-snowpack",
   "license": "MIT",
   "author": "Karolis Šarapnickis",
-  "main": "index.js",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
   "scripts": {
+    "build": "lerna run build",
     "commit": "npx cz",
     "format": "run-p format:*",
-    "format:package.json": "sort-package-json package.json",
+    "format:package.json": "sort-package-json package.json packages/*/package.json examples/*/package.json",
     "format:prettier": "prettier --write '**/*.*'",
     "lint": "run-p lint:*",
     "lint:js": "eslint .",
     "lint:md": "markdownlint-cli2 '**/*.md' '!node_modules' '!**/node_modules'",
-    "qa": "run-p lint",
-    "release": "yarn && run-s qa && standard-version --no-verify && git push --follow-tags --no-verify && npm publish"
+    "purge": "lerna run --parallel clean; lerna clean",
+    "qa": "run-p lint"
   },
   "husky": {
     "hooks": {
@@ -29,7 +37,7 @@
     "**/package.json": [
       "sort-package-json"
     ],
-    "*.{json,md,yml}": [
+    "*.{json,md,yml,css,html}": [
       "pretty-quick --staged"
     ],
     "*.{js}": [
@@ -44,14 +52,14 @@
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
-    "@k.sh/eslint-config": "^1.18.1",
+    "@k.sh/eslint-config": "^1.20.0",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^4.3.0",
-    "lint-staged": "^10.4.0",
-    "markdownlint-cli2": "^0.0.10",
+    "husky": "^4.3.8",
+    "lerna": "^3.22.1",
+    "lint-staged": "^10.5.3",
+    "markdownlint-cli2": "^0.0.13",
     "npm-run-all": "^4.1.5",
-    "pretty-quick": "^3.0.2",
-    "sort-package-json": "^1.46.0",
-    "standard-version": "^9.0.0"
+    "pretty-quick": "^3.1.0",
+    "sort-package-json": "^1.48.1"
   }
 }

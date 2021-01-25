@@ -4,9 +4,12 @@
 !*.json
 !*.md
 !*.yml
+!*.html
+!*.css
 
 # npm files
 node_modules
 package.json
 
 # project
+dist
