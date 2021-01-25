@@ -23,10 +23,11 @@
     "lerna": "lerna",
     "lint": "run-p lint:*",
     "lint:js": "eslint .",
-    "lint:md": "markdownlint-cli2 '**/*.md' '!node_modules' '!**/node_modules'",
+    "lint:md": "markdownlint-cli2 '**/*.md' '!node_modules' '!**/node_modules' '!**/CHANGELOG.md'",
     "prepublish": "cp README.md packages/electron-snowpack",
     "purge": "lerna run --parallel clean; lerna clean",
-    "qa": "run-p lint"
+    "qa": "run-p lint",
+    "release": "yarn; run-p qa build; yarn lerna publish --no-private --conventional-commits --create-release github --no-commit-hooks"
   },
   "husky": {
     "hooks": {
