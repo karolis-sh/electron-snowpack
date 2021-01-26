@@ -13,7 +13,7 @@ module.exports = {
   },
   plugins: [
     '@snowpack/plugin-dotenv',
-    !dev && path.join(__dirname, '../lib/snowpack-plugin-relative-assets.js'),
+    !dev && path.join(__dirname, '../lib/snowpack-plugin-relative-proxy-imports.js'),
   ].filter(Boolean),
   devOptions: {
     output: 'stream',
