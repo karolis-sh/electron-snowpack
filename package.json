@@ -12,7 +12,8 @@
   "author": "Karolis Šarapnickis",
   "workspaces": [
     "packages/*",
-    "examples/*"
+    "examples/*",
+    "playground/*"
   ],
   "scripts": {
     "build": "lerna run build",

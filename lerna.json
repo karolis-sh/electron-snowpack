@@ -1,6 +1,6 @@
 {
   "npmClient": "yarn",
-  "packages": ["packages/*", "examples/*"],
+  "packages": ["packages/*", "examples/*", "playground/*"],
   "version": "independent",
   "command": {
     "publish": {
