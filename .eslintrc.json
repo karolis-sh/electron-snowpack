@@ -2,5 +2,8 @@
   "extends": ["@k.sh/eslint-config"],
   "env": {
     "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020
   }
 }
