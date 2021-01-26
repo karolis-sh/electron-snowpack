@@ -16,7 +16,7 @@
     "electron-snowpack": "*"
   },
   "devDependencies": {
-    "electron": "11.2.0",
+    "electron": "11.2.1",
     "electron-builder": "^22.9.1"
   },
   "build": {
