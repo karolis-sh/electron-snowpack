@@ -24,6 +24,6 @@ module.exports = {
     out: path.join(config.outputDir, 'renderer'),
   },
   packageOptions: {
-    external: [...builtinModules, 'electron'],
+    external: [...builtinModules.filter((external) => external !== 'process'), 'electron'],
   },
 };
