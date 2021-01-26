@@ -4,7 +4,7 @@ const fs = require('fs');
 const readline = require('readline');
 const glob = require('glob');
 
-const PROXY_FILE_SUFFIX = '.proxy.js';
+const PROXY_SUFFIX = '.proxy.js';
 
 const readFirstLine = async (filePath) => {
   const readable = fs.createReadStream(filePath);
@@ -28,19 +28,19 @@ const writeFirstLine = async (filePath, content) => {
 
 module.exports = () => {
   return {
-    name: '@electron-snowpack/snowpack-plugin-relative-assets',
+    name: '@electron-snowpack/snowpack-plugin-relative-proxy-import',
     async optimize({ buildDirectory }) {
-      const proxies = await promisify(glob)(path.join(buildDirectory, `**/*${PROXY_FILE_SUFFIX}`));
+      const proxies = await promisify(glob)(path.join(buildDirectory, `**/*${PROXY_SUFFIX}`));
       await Promise.all(
         proxies.map(async (filePath) => {
           const firstLine = await readFirstLine(filePath);
-          const relativeAssetProxy = path.relative(buildDirectory, filePath);
-          const relativeAsset = relativeAssetProxy.substring(
+          const relativeProxyImport = path.relative(buildDirectory, filePath);
+          const relativeImport = relativeProxyImport.substring(
             0,
-            relativeAssetProxy.length - PROXY_FILE_SUFFIX.length
+            relativeProxyImport.length - PROXY_SUFFIX.length
           );
-          if (firstLine === `export default "/${relativeAsset}";`) {
-            await writeFirstLine(filePath, `export default "${relativeAsset}";`);
+          if (firstLine === `export default "/${relativeImport}";`) {
+            await writeFirstLine(filePath, `export default "${relativeImport}";`);
           }
         })
       );
