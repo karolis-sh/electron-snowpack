@@ -8,9 +8,7 @@ let mainWindow;
 function createMainWindow() {
   const window = new BrowserWindow();
 
-  if (process.env.NODE_ENV !== 'production') {
-    window.webContents.openDevTools();
-  }
+  window.webContents.openDevTools();
 
   window.loadURL(getAssetURL(ENTRY_FILE));
 

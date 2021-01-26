@@ -5,13 +5,14 @@
   "license": "MIT",
   "scripts": {
     "build": "electron-snowpack build",
-    "clean": "electron-snowpack clean",
+    "clean": "electron-snowpack clean; rm -rf node_modules/.cache/snowpack",
     "dev": "electron-snowpack dev",
     "dist": "electron-builder",
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
     "try": "run-s clean build dist:dir; sleep 1; open dist/mac/${npm_package_name}.app"
   },
   "dependencies": {
+    "module-with-process": "*",
     "electron-snowpack": "*"
   },
   "devDependencies": {
