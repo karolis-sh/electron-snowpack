@@ -1,9 +1,12 @@
-import mwp from 'module-with-process';
+import mwp, { ModuleOutput } from 'module-with-process';
 
-window.mwp = mwp;
+const log = (fn: () => ModuleOutput): void => {
+  console.log('mwp :>> ', fn);
 
-// eslint-disable-next-line no-console
-console.log('mwp :>> ', mwp);
+  console.log(import.meta.env.NODE_ENV);
+};
+
+log(mwp);
 
 document.getElementById('content').innerHTML = 'Edit the files and save to reload.';
 

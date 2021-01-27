@@ -14,6 +14,7 @@ module.exports = {
   plugins: [
     '@snowpack/plugin-dotenv',
     !dev && path.join(__dirname, '../lib/snowpack-plugin-relative-proxy-imports.js'),
+    config.isTS && '@snowpack/plugin-typescript',
   ].filter(Boolean),
   devOptions: {
     output: 'stream',
