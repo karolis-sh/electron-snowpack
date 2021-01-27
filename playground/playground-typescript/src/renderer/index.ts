@@ -2,6 +2,8 @@ import mwp, { ModuleOutput } from 'module-with-process';
 
 const log = (fn: () => ModuleOutput): void => {
   console.log('mwp :>> ', fn);
+
+  console.log(import.meta.env.NODE_ENV);
 };
 
 log(mwp);

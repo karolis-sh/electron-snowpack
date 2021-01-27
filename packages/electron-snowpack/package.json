@@ -16,6 +16,8 @@
   },
   "dependencies": {
     "@snowpack/plugin-dotenv": "^2.0.5",
+    "@snowpack/plugin-typescript": "^1.2.1",
+    "@types/snowpack-env": "^2.3.3",
     "builtin-modules": "^3.2.0",
     "chalk": "^4.1.0",
     "commander": "^7.0.0",

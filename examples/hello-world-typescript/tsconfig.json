@@ -1,13 +1,7 @@
 {
+  "extends": "electron-snowpack/config/tsconfig.json",
   "include": ["src", "types"],
   "compilerOptions": {
-    "module": "esnext",
-    "target": "esnext",
-    "moduleResolution": "node",
-    "jsx": "preserve",
-    "baseUrl": "./",
-    "allowSyntheticDefaultImports": true,
-    "importsNotUsedAsValues": "error",
-    "forceConsistentCasingInFileNames": true
+    "baseUrl": "./"
   }
 }

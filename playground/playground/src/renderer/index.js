@@ -2,6 +2,7 @@ import mwp from 'module-with-process';
 
 window.mwp = mwp;
 
+// eslint-disable-next-line no-console
 console.log('mwp :>> ', mwp);
 
 document.getElementById('content').innerHTML = 'Edit the files and save to reload.';
