@@ -1,6 +1,6 @@
 {
   "name": "electron-snowpack",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Effective Electron app development with Snowpack and esbuild",
   "keywords": [
     "electron",
