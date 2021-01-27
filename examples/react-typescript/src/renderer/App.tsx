@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0);
+const App: React.FC = () => {
+  const [count, setCount] = useState<number>(0);
 
   useEffect(() => {
     const timer = setTimeout(() => setCount(count + 1), 1000);
@@ -16,7 +16,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/renderer/App.jsx</code> and save to reload.
+          Edit <code>src/renderer/App.tsx</code> and save to reload.
         </p>
         <p>
           Page has been open for <code>{count}</code> seconds.
@@ -41,13 +41,13 @@ function App() {
               margin: 10,
               padding: 10,
               background: '#61dafb',
-              borderRadius: 3
+              borderRadius: 3,
             }}
           />
         </div>
       </header>
     </div>
   );
-}
+};
 
 export default App;
