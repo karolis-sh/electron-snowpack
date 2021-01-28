@@ -13,7 +13,7 @@ function createMainWindow() {
     },
   });
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.MODE !== 'production') {
     mainWindow.webContents.openDevTools();
   }
 
