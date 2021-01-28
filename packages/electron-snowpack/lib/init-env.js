@@ -20,14 +20,16 @@ if (dev) {
   process.env.SNOWPACK_PORT = config.snowpackPort;
 }
 
-// https://github.com/bkeepers/dotenv#what-other-env-files-can-i-use
+/**
+ * Based on:
+ * https://github.com/snowpackjs/snowpack/tree/main/plugins/plugin-dotenv
+ */
 const dotenvFiles = [
   NODE_ENV && `.env.${NODE_ENV}.local`,
   NODE_ENV !== 'test' && '.env.local',
   NODE_ENV && `.env.${NODE_ENV}`,
   '.env',
 ].filter(Boolean);
-
 dotenvFiles.forEach((dotenvFile) => {
   if (fs.existsSync(dotenvFile)) {
     require('dotenv-expand')(
