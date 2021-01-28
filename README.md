@@ -72,7 +72,7 @@ to package and build a ready for distribution Electron app for macOS, Windows an
 Linux with “auto-update” support out of the box.
 
 `electron-snowpack` provides a config starter that will _just work_ with the builder.
-Just update your `electron-builder` setup in `package.json`:
+Update your `electron-builder` setup in `package.json`:
 
 ```json
 {
