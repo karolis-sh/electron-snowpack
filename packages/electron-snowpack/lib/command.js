@@ -1,11 +1,11 @@
 const path = require('path');
 const { promisify } = require('util');
-const chalk = require('chalk');
 const rimraf = require('rimraf');
 const onExit = require('signal-exit');
 const execa = require('execa');
 const { build: esBuild } = require('esbuild');
 const { build: spBuild, startServer } = require('snowpack');
+const logger = require('./logger');
 
 const config = require('../config');
 const getESBuildConfig = require('./get-esbuild-config');
@@ -15,7 +15,7 @@ exports.clean = async () => {
   try {
     await promisify(rimraf)(config.outputDir);
   } catch (err) {
-    console.error(err);
+    logger.error('electron-snowpack', err);
     process.exit(1);
   }
 };
@@ -26,11 +26,12 @@ exports.dev = async () => {
   let esbuild;
 
   onExit(async (code) => {
-    console.log(
-      code === 1
-        ? chalk.red('🚨 An unexpected error has occurred!')
-        : chalk.yellow('🔌 Shutting down gracefully...')
-    );
+    if (code === 1) {
+      logger.error('electron-snowpack', '🚨 An unexpected error has occurred!');
+    } else {
+      logger.info('electron-snowpack', '🔌 Shutting down gracefully...');
+    }
+
     try {
       if (electron && !electron.killed) electron.kill();
       if (snowpack) await snowpack.shutdown();
@@ -55,8 +56,12 @@ exports.dev = async () => {
 
   const startElectron = async () => {
     electron = execa('electron', [path.join(config.outputDir, 'main/index.js')]);
-    electron.stdout.pipe(process.stdout);
-    electron.stderr.pipe(process.stderr);
+    electron.stdout.on('data', (message) => {
+      logger.info('electron', message);
+    });
+    electron.stderr.on('data', (message) => {
+      logger.error('electron', message);
+    });
     electron.on('close', () => process.exit(0));
     electron.on('error', () => process.exit(1));
     await electron;
@@ -66,7 +71,7 @@ exports.dev = async () => {
     await Promise.all([startSnowpack(), startESBuild()]);
     await startElectron();
   } catch (err) {
-    console.error(err);
+    logger.error('electron-snowpack', err);
     process.exit(1);
   }
 };
@@ -78,7 +83,7 @@ exports.build = async () => {
       spBuild({ config: await getSnowpackConfig() }),
     ]);
   } catch (err) {
-    console.error(err);
+    logger.error('electron-snowpack', err);
     process.exit(1);
   }
 };
