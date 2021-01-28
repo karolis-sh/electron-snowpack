@@ -5,23 +5,41 @@ const { program } = require('commander');
 
 const { version } = require('../package.json');
 
-program.version(version);
+program
+  .version(version)
+  .option('--verbose', 'Enable verbose log messages')
+  .on('option:verbose', () => {
+    process.env.VERBOSE = true;
+  })
+  .option('--quiet', 'Enable minimal log messages')
+  .on('option:quiet', () => {
+    process.env.QUIET = true;
+  });
 
-program.command('clean').action(() => {
-  require('../lib/init-env');
-  require('../lib/command').clean();
-});
+program
+  .command('clean')
+  .description('Wipe built assets')
+  .action(() => {
+    require('../lib/init-env');
+    require('../lib/command').clean();
+  });
 
-program.command('dev').action(() => {
-  process.env.NODE_ENV = 'development';
-  require('../lib/init-env');
-  require('../lib/command').dev();
-});
+program
+  .command('dev')
+  .description('Develop your project locally')
+  .action(() => {
+    process.env.NODE_ENV = 'development';
+    require('../lib/init-env');
+    require('../lib/command').dev();
+  });
 
-program.command('build').action(() => {
-  process.env.NODE_ENV = 'production';
-  require('../lib/init-env');
-  require('../lib/command').build();
-});
+program
+  .command('build')
+  .description('Build your project for production')
+  .action(() => {
+    process.env.NODE_ENV = 'production';
+    require('../lib/init-env');
+    require('../lib/command').build();
+  });
 
 program.parse(process.argv);

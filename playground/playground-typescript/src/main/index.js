@@ -7,7 +7,7 @@ let mainWindow;
 function createMainWindow() {
   const window = new BrowserWindow();
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.MODE !== 'production') {
     window.webContents.openDevTools();
   }
 
