@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "electron-snowpack build",
-    "clean": "electron-snowpack clean",
+    "clean": "rm -rf node_modules/.cache/snowpack; electron-snowpack clean",
     "dev": "electron-snowpack dev",
     "dist": "electron-builder",
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
