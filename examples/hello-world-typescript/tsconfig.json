@@ -1,7 +1,4 @@
 {
   "extends": "electron-snowpack/config/tsconfig.json",
-  "include": ["src", "types"],
-  "compilerOptions": {
-    "baseUrl": "./"
-  }
+  "include": ["src", "types"]
 }
