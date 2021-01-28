@@ -19,6 +19,14 @@ module.exports = async (more) => {
     }
   });
 
+  let logLevel = 'warning';
+
+  if (process.env.QUIET) {
+    logLevel = 'silent';
+  } else if (process.env.VERBOSE) {
+    logLevel = 'info';
+  }
+
   return {
     platform: 'node',
     format: 'cjs',
@@ -34,7 +42,7 @@ module.exports = async (more) => {
           external: ['electron'],
         }),
     define,
-    logLevel: 'error',
+    logLevel,
     ...more,
   };
 };

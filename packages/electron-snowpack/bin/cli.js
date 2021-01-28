@@ -5,7 +5,16 @@ const { program } = require('commander');
 
 const { version } = require('../package.json');
 
-program.version(version);
+program
+  .version(version)
+  .option('--verbose', 'Enable verbose log messages')
+  .on('option:verbose', () => {
+    process.env.VERBOSE = true;
+  })
+  .option('--quiet', 'Enable minimal log messages')
+  .on('option:quiet', () => {
+    process.env.QUIET = true;
+  });
 
 program.command('clean').action(() => {
   require('../lib/init-env');
