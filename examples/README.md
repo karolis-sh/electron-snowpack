@@ -1,14 +1,14 @@
 # Examples
 
-- [`hello-world`](/hello-world)
-- [`hello-world-typescript`](/hello-world-typescript)
-- [`react`](/react)
-- [`react-typescript`](/react-typescript)
-- [`svelte`](/svelte)
-- [`svelte-typescript`](/svelte-typescript)
-- [`vue`](/vue)
-- [`electron-natives`](/electron-natives) - how to use Electron/Node native methods
-- [`multiple-renderers`](/multiple-renderers) - how to use multiple renderer
+- [`hello-world`](hello-world)
+- [`hello-world-typescript`](hello-world-typescript)
+- [`react`](react)
+- [`react-typescript`](react-typescript)
+- [`svelte`](svelte)
+- [`svelte-typescript`](svelte-typescript)
+- [`vue`](vue)
+- [`electron-natives`](electron-natives) - how to use Electron/Node native methods
+- [`multiple-renderers`](multiple-renderers) - how to use multiple renderer
   entry points (e.g. `/loading.html` + `/index.html`)
 
 ## Commands
