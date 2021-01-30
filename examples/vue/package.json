@@ -1,0 +1,27 @@
+{
+  "name": "vue",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "electron-snowpack build",
+    "clean": "electron-snowpack clean",
+    "dev": "electron-snowpack dev",
+    "dist": "electron-builder",
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
+    "open": "open dist/mac/${npm_package_name}.app",
+    "try": "run-s clean build dist:dir open"
+  },
+  "dependencies": {
+    "electron-snowpack": "*",
+    "vue": "^3.0.5"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-vue": "^2.3.0",
+    "electron": "11.2.1",
+    "electron-builder": "^22.9.1"
+  },
+  "build": {
+    "extends": "electron-snowpack/config/electron-builder.js"
+  }
+}

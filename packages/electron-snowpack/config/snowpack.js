@@ -5,7 +5,7 @@ const config = require('.');
 
 const dev = process.env.NODE_ENV !== 'production';
 
-/** @type {import("snowpack").SnowpackUserConfig } */
+/** @type { import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
     public: { url: path.join('/', config.baseHref), static: true },
