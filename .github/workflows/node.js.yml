@@ -25,4 +25,3 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: yarn --frozen-lockfile
       - run: yarn qa
-      - run: yarn build
