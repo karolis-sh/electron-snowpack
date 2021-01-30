@@ -5,11 +5,13 @@ const config = require('.');
 
 const dev = process.env.NODE_ENV !== 'production';
 
+const getPathname = (href) => new URL(href, 'http://example.com/').pathname;
+
 /** @type { import("snowpack").SnowpackUserConfig } */
 module.exports = {
   mount: {
-    public: { url: path.join('/', config.baseHref), static: true },
-    'src/renderer': path.join('/', config.rendererBaseHref),
+    public: { url: getPathname(config.baseHref), static: true },
+    'src/renderer': getPathname(config.rendererBaseHref),
   },
   plugins: [
     '@snowpack/plugin-dotenv',

@@ -1,5 +1,5 @@
 {
-  "name": "playground-typescript",
+  "name": "@playground/typescript",
   "version": "0.0.0",
   "private": true,
   "license": "MIT",
@@ -9,7 +9,7 @@
     "dev": "electron-snowpack dev",
     "dist": "electron-builder",
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
-    "open": "open dist/mac/${npm_package_name}.app",
+    "open": "open dist/mac/playground-typescript.app",
     "try": "run-s clean build dist:dir open"
   },
   "dependencies": {
@@ -22,6 +22,7 @@
     "typescript": "^4.1.3"
   },
   "build": {
-    "extends": "electron-snowpack/config/electron-builder.js"
+    "extends": "electron-snowpack/config/electron-builder.js",
+    "productName": "playground-typescript"
   }
 }
