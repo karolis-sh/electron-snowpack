@@ -1,13 +1,15 @@
 *
 !*/
-!*.js
-!*.ts
-!*.tsx
 !*.json
 !*.md
 !*.yml
 !*.html
 !*.css
+!*.js
+!*.jsx
+!*.ts
+!*.tsx
+!*.svelte
 
 # npm files
 node_modules
