@@ -41,7 +41,7 @@ function App() {
               margin: 10,
               padding: 10,
               background: '#61dafb',
-              borderRadius: 3
+              borderRadius: 3,
             }}
           />
         </div>

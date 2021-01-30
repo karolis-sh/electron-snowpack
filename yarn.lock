@@ -7027,6 +7027,11 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
+prettier-plugin-svelte@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.npmjs.org/prettier-plugin-svelte/-/prettier-plugin-svelte-2.1.1.tgz#e6613cac4292b5bbda5250680565c131b0da5ced"
+  integrity sha512-U0gRsdJtveyusHd86OUPD+lEVd13bHPPF/CZD/csKjz0Y+Cv4WbUy9x8tA5vaHFtf0tsu8Yb1MrfuhN3GH2gig==
+
 prettier@^2.2.1:
   version "2.2.1"
   resolved "https://registry.npmjs.org/prettier/-/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
@@ -8346,10 +8351,25 @@ svelte-preprocess@^4.6.0:
     detect-indent "^6.0.0"
     strip-indent "^3.0.0"
 
+svelte-preprocess@^4.6.5:
+  version "4.6.5"
+  resolved "https://registry.npmjs.org/svelte-preprocess/-/svelte-preprocess-4.6.5.tgz#65cd8e26241ce7e53a8c306472cefcb494a550f1"
+  integrity sha512-bVNq1seKfJlLKttWjhT55HBMz5WM8Ev5iidbu8qPD0B8+pHrsyg2QS2pZLQ6epU3GIKFfZzAlBQX+978GRHgkQ==
+  dependencies:
+    "@types/pug" "^2.0.4"
+    "@types/sass" "^1.16.0"
+    detect-indent "^6.0.0"
+    strip-indent "^3.0.0"
+
 svelte@^3.32.0:
   version "3.32.0"
   resolved "https://registry.npmjs.org/svelte/-/svelte-3.32.0.tgz#06d7dcdf65e62a708c74231f7099569df43e3af6"
   integrity sha512-+EA3qfKDG0uB16s7m1z9Nc1o01G7YC4eq1cnHOzCy+fKsvGAJrjhjBIM3zCW2eZUu639UbHQElaOPQWUjBN3Yw==
+
+svelte@^3.32.1:
+  version "3.32.1"
+  resolved "https://registry.npmjs.org/svelte/-/svelte-3.32.1.tgz#c4b6e35517d0ed77e652cc8964ef660afa2f70f3"
+  integrity sha512-j1KmD2ZOU0RGq1/STDXjwfh0/eJ/Deh2NXyuz1bpR9eOcz9yImn4CGxXdbSAN7cMTm9a7IyPUIbuBCzu/pXK0g==
 
 table@^6.0.4:
   version "6.0.7"

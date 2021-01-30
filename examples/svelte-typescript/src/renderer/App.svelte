@@ -1,6 +1,6 @@
-<script>
+<script lang="typescript">
   import { onMount } from 'svelte';
-  let count = 0;
+  let count: number = 0;
   onMount(() => {
     const interval = setInterval(() => count++, 1000);
     return () => {
@@ -42,6 +42,7 @@
   .App p {
     margin: 0.4rem;
   }
+
   .App-header {
     background-color: #f9f6f6;
     color: #333;
@@ -59,9 +60,9 @@
     height: 36vmin;
     pointer-events: none;
     margin-bottom: 3rem;
-    animation: App-logo-pulse infinite 1.6s ease-in-out alternate;
+    animation: App-logo-spin infinite 1.6s ease-in-out alternate;
   }
-  @keyframes App-logo-pulse {
+  @keyframes App-logo-spin {
     from {
       transform: scale(1);
     }
