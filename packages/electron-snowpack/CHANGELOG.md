@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.3.0...electron-snowpack@0.3.1) (2021-01-30)
+
+
+### Bug Fixes
+
+* resolve windows issues ([24a4203](https://github.com/karolis-sh/electron-snowpack/commit/24a42039ba2ea7910a280c7e726b527d000df2aa)), closes [#16](https://github.com/karolis-sh/electron-snowpack/issues/16)
+
+
+
+
+
 # [0.3.0](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.2.0...electron-snowpack@0.3.0) (2021-01-28)
 
 
