@@ -1,4 +1,7 @@
-# Example: Svelte + Typescript
+# Example: Svelte + TypeScript
+
+- 📚 [Svelte](https://svelte.dev/)
+- 📚 [TypeScript](https://www.typescriptlang.org/)
 
 ## Configuration
 
