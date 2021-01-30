@@ -9,7 +9,8 @@
     "dev": "electron-snowpack dev",
     "dist": "electron-builder",
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
-    "try": "run-s clean build dist:dir; sleep 1; open dist/mac/${npm_package_name}.app"
+    "open": "open dist/mac/${npm_package_name}.app",
+    "try": "run-s clean build dist:dir open"
   },
   "dependencies": {
     "electron-snowpack": "*",
