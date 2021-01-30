@@ -1,17 +1,18 @@
 <template>
   <div class="App">
     <header class="App-header">
-      <img v-bind:src="import.meta.env.SNOWPACK_PUBLIC_BASE_HREF + '/electron-snowpack.svg'" class="App-logo" alt="logo" />
+      <img
+        v-bind:src="import.meta.env.SNOWPACK_PUBLIC_BASE_HREF + '/logo.svg'"
+        class="App-logo"
+        alt="logo"
+      />
       <p>
         Edit
         <code>src/renderer/App.vue</code> and save to reload.
       </p>
-      <a
-        class="App-link"
-        href="https://vuejs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >{{ message }}</a>
+      <a class="App-link" href="https://vuejs.org" target="_blank" rel="noopener noreferrer">{{
+        message
+      }}</a>
     </header>
   </div>
 </template>
@@ -20,9 +21,9 @@
 export default {
   data() {
     return {
-      message: "Learn Vue"
+      message: 'Learn Vue',
     };
-  }
+  },
 };
 </script>
 
@@ -58,15 +59,5 @@ export default {
   }
 }
 </style>
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
+© 2021 GitHub, Inc. Terms Privacy Security Status Docs Contact GitHub Pricing API Training Blog
 About

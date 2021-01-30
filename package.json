@@ -41,7 +41,7 @@
     "**/package.json": [
       "sort-package-json"
     ],
-    "*.{json,md,yml,css,html,svelte}": [
+    "*.{json,md,yml,css,html,svelte,vue}": [
       "pretty-quick --staged"
     ],
     "*.{js}": [
