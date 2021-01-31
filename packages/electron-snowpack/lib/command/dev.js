@@ -1,29 +1,16 @@
 const path = require('path');
-const { promisify } = require('util');
-const rimraf = require('rimraf');
 const chalk = require('chalk');
 const onExit = require('signal-exit');
 const execa = require('execa');
 const { build: esBuild } = require('esbuild');
-const { build: spBuild, startServer } = require('snowpack');
+const { startServer: startSnowpackServer } = require('snowpack');
 
-const config = require('../config');
-const log = require('./log');
-const getESBuildConfig = require('./get-esbuild-config');
-const getSnowpackConfig = require('./get-snowpack-config');
+const config = require('../../config');
+const log = require('../log');
+const getESBuildConfig = require('../get-esbuild-config');
+const getSnowpackConfig = require('../get-snowpack-config');
 
-exports.clean = async () => {
-  try {
-    const dir = path.join(process.cwd(), config.outputDir);
-    await promisify(rimraf)(dir);
-    log.info(`Removed directory: ${log.stringify(dir)}`, { verbose: true });
-  } catch (err) {
-    log.error(err);
-    process.exit(1);
-  }
-};
-
-exports.dev = async () => {
+module.exports = async () => {
   let electron;
   let snowpack;
   let esbuild;
@@ -49,7 +36,7 @@ exports.dev = async () => {
     log.info(`Starting ${chalk.bold('Snowpack')} server with config: ${log.stringify(cfg, true)}`, {
       verbose: true,
     });
-    snowpack = await startServer({ config: cfg });
+    snowpack = await startSnowpackServer({ config: cfg });
   };
 
   const startESBuild = async () => {
@@ -83,36 +70,6 @@ exports.dev = async () => {
   try {
     await Promise.all([startSnowpack(), startESBuild()]);
     await startElectron();
-  } catch (err) {
-    log.error(err);
-    process.exit(1);
-  }
-};
-
-exports.build = async () => {
-  const buildMain = async () => {
-    const cfg = await getESBuildConfig();
-    log.info(`Starting ${chalk.bold('esbuild')} with config: ${log.stringify(cfg, true)}`, {
-      verbose: true,
-    });
-    const start = log.info(chalk.yellow('! building main files...'), {
-      label: 'esbuild',
-      measure: true,
-    });
-    await esBuild(cfg);
-    log.info(`${chalk.green('✔')} build complete`, { label: 'esbuild', measure: start });
-  };
-  const buildRenderer = async () => {
-    const cfg = await getSnowpackConfig();
-    log.info(`Starting ${chalk.bold('Snowpack')} with config: ${log.stringify(cfg, true)}`, {
-      verbose: true,
-    });
-    await spBuild({ config: cfg });
-  };
-
-  try {
-    await Promise.all([buildMain(), buildRenderer()]);
-    log.info('🏁 Full build complete!');
   } catch (err) {
     log.error(err);
     process.exit(1);
