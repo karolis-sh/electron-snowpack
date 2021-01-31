@@ -36,4 +36,6 @@ module.exports = {
   warn: log(console.warn, 'warn'),
   error: log(console.error, 'error'),
   /* eslint-enable */
+  stringify: (obj, multiline) =>
+    chalk.cyanBright(JSON.stringify(obj, ...(multiline ? [null, 2] : []))),
 };
