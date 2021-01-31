@@ -14,6 +14,7 @@ const { NODE_ENV } = process.env;
 
 const dev = NODE_ENV !== 'production';
 
+process.env.MODE = NODE_ENV;
 process.env.SNOWPACK_PUBLIC_BASE_HREF = config.baseHref;
 process.env.SNOWPACK_PUBLIC_RENDERER_BASE_HREF = config.rendererBaseHref;
 if (dev) {

@@ -9,10 +9,9 @@ module.exports = async (more) => {
 
   const define = {};
 
-  ['NODE_ENV'].forEach((key) => {
+  ['NODE_ENV', 'MODE'].forEach((key) => {
     define[`process.env.${key}`] = JSON.stringify(process.env[key]);
   });
-  define['process.env.MODE'] = define['process.env.NODE_ENV'];
 
   Object.keys(process.env).forEach((key) => {
     if (key.startsWith('SNOWPACK_')) {
