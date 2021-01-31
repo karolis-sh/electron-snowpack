@@ -10,10 +10,70 @@ const log = require('../log');
 const getESBuildConfig = require('../get-esbuild-config');
 const getSnowpackConfig = require('../get-snowpack-config');
 
-module.exports = async () => {
+const getMain = () => {
   let electron;
-  let snowpack;
   let esbuild;
+
+  return {
+    kill: () => {
+      if (electron && !electron.killed) electron.kill();
+      if (esbuild) esbuild.rebuild.dispose();
+    },
+    dev: async () => {
+      const startESBuild = async () => {
+        const cfg = await getESBuildConfig();
+        log.info(
+          `Starting ${chalk.bold('esbuild')} build with config: ${log.stringify(cfg, true)}`,
+          { verbose: true }
+        );
+        esbuild = await esBuild(cfg);
+      };
+
+      const startElectron = async () => {
+        const args = [path.join(config.outputDir, 'main/index.js')];
+        log.info(
+          `Starting an ${chalk.bold('electron')} process with arguments: ${log.stringify(args)}`,
+          { verbose: true }
+        );
+        electron = execa('electron', args);
+        electron.stdout.on('data', (message) => {
+          log.info(message, { label: 'electron' });
+        });
+        electron.stderr.on('data', (message) => {
+          log.error(message, { label: 'electron' });
+        });
+        electron.on('close', () => process.exit(0));
+        electron.on('error', () => process.exit(1));
+        await electron;
+      };
+
+      await startESBuild();
+      await startElectron();
+    },
+  };
+};
+
+const getRenderer = () => {
+  let snowpack;
+
+  return {
+    kill: async () => {
+      if (snowpack) await snowpack.shutdown();
+    },
+    dev: async () => {
+      const cfg = await getSnowpackConfig();
+      log.info(
+        `Starting ${chalk.bold('Snowpack')} server with config: ${log.stringify(cfg, true)}`,
+        { verbose: true }
+      );
+      snowpack = await startSnowpackServer({ config: cfg });
+    },
+  };
+};
+
+module.exports = async () => {
+  const main = getMain();
+  const renderer = getRenderer();
 
   onExit(async (code) => {
     if (code === 1) {
@@ -23,53 +83,15 @@ module.exports = async () => {
     }
 
     try {
-      if (electron && !electron.killed) electron.kill();
-      if (snowpack) await snowpack.shutdown();
-      if (esbuild) esbuild.rebuild.dispose();
+      await Promise.all([main.kill(), renderer.kill()]);
     } finally {
       process.exit(code);
     }
   });
 
-  const startSnowpack = async () => {
-    const cfg = await getSnowpackConfig();
-    log.info(`Starting ${chalk.bold('Snowpack')} server with config: ${log.stringify(cfg, true)}`, {
-      verbose: true,
-    });
-    snowpack = await startSnowpackServer({ config: cfg });
-  };
-
-  const startESBuild = async () => {
-    const cfg = await getESBuildConfig();
-    log.info(`Starting ${chalk.bold('esbuild')} build with config: ${log.stringify(cfg, true)}`, {
-      verbose: true,
-    });
-    esbuild = await esBuild(cfg);
-  };
-
-  const startElectron = async () => {
-    const args = [path.join(config.outputDir, 'main/index.js')];
-    log.info(
-      `Starting an ${chalk.bold('electron')} process with arguments: ${log.stringify(args)}`,
-      {
-        verbose: true,
-      }
-    );
-    electron = execa('electron', args);
-    electron.stdout.on('data', (message) => {
-      log.info(message, { label: 'electron' });
-    });
-    electron.stderr.on('data', (message) => {
-      log.error(message, { label: 'electron' });
-    });
-    electron.on('close', () => process.exit(0));
-    electron.on('error', () => process.exit(1));
-    await electron;
-  };
-
   try {
-    await Promise.all([startSnowpack(), startESBuild()]);
-    await startElectron();
+    await renderer.dev();
+    await main.dev();
   } catch (err) {
     log.error(err);
     process.exit(1);
