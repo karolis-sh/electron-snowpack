@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.3.1...electron-snowpack@0.4.0) (2021-02-04)
+
+
+### Bug Fixes
+
+* load svelte-env TypeScript types explicitly ([720e32c](https://github.com/karolis-sh/electron-snowpack/commit/720e32c4526914785a992643d46d87d47b8f26cc))
+
+
+### Features
+
+* add Electron main live reload ([0377c53](https://github.com/karolis-sh/electron-snowpack/commit/0377c533df09b94f790ed62ad8117c62254a2825)), closes [#5](https://github.com/karolis-sh/electron-snowpack/issues/5)
+
+
+
+
+
 ## [0.3.1](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.3.0...electron-snowpack@0.3.1) (2021-01-30)
 
 
