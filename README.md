@@ -24,11 +24,11 @@ docs.
 
 ## Features
 
-- ✅ Snowpack for `src/renderer`, `public`
-- ✅ esbuild for `src/main`
+- ✅ esbuild for `main` (Live Reload)
+- ✅ Snowpack for `renderer` (TypeScript, HMR + Fast Refresh, plugins, etc.)
 - ✅ `.env` variables
-- 🚧 TypeScript (currently fully functional for `renderer` only)
-- ✅ Config presets for Snowpack, TypeScript and `electron-builder`
+- ✅ Ability to extend `snowpack.config.js` and `tsconfig.json`
+- ✅ Config preset for `electron-builder`
 
 ### Snowpack
 

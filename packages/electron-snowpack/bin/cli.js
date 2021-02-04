@@ -21,7 +21,7 @@ program
   .description('Wipe built assets')
   .action(() => {
     require('../lib/init-env');
-    require('../lib/command').clean();
+    require('../lib/command/clean')();
   });
 
 program
@@ -30,7 +30,7 @@ program
   .action(() => {
     process.env.NODE_ENV = 'development';
     require('../lib/init-env');
-    require('../lib/command').dev();
+    require('../lib/command/dev')();
   });
 
 program
@@ -39,7 +39,7 @@ program
   .action(() => {
     process.env.NODE_ENV = 'production';
     require('../lib/init-env');
-    require('../lib/command').build();
+    require('../lib/command/build')();
   });
 
 program.parse(process.argv);

@@ -13,7 +13,7 @@
 
 ## Commands
 
-- `dev` - launch Electron in development mode
+- `dev` - launch app in development mode
 - `clean` - wipe build assets
 - `build` - build production ready assets
 - `dist` - package assets for distribution with [`electron-builder`](https://www.electron.build/)
