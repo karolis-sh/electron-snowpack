@@ -3465,7 +3465,12 @@ es6-promisify@^5.0.0:
   dependencies:
     es6-promise "^4.0.3"
 
-esbuild@^0.8.34, esbuild@^0.8.7:
+esbuild@^0.8.41:
+  version "0.8.41"
+  resolved "https://registry.npmjs.org/esbuild/-/esbuild-0.8.41.tgz#d177f35354cf2b5a3eeddd8c927066fff82771b3"
+  integrity sha512-xejVYquAHrYaHkn/7Itm0aTAALvY1ZJTWMQ14Ww8wEeeg6B/8BN3rjDJ4LMbLoEdVEAFS2b5OZ3jPRYm8Ikm0g==
+
+esbuild@^0.8.7:
   version "0.8.34"
   resolved "https://registry.npmjs.org/esbuild/-/esbuild-0.8.34.tgz#16b4ac58f74c821d2c5a8c2f0585ca96a38ab4e6"
   integrity sha512-tnr0V1ooakYr1aRLXQLzCn2GVG1kBTW3FWpRyC+NgrR3ntsouVpJOlTOV0BS4YLATx3/c+x3h/uBq9lWJlUAtQ==

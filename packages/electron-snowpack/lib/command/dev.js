@@ -20,14 +20,7 @@ const getMain = () => {
       if (esbuild) esbuild.rebuild.dispose();
     },
     dev: async () => {
-      const startESBuild = async () => {
-        const cfg = await getESBuildConfig();
-        log.info(
-          `Starting ${chalk.bold('esbuild')} build with config: ${log.stringify(cfg, true)}`,
-          { verbose: true }
-        );
-        esbuild = await esBuild(cfg);
-      };
+      let restarting = false;
 
       const startElectron = async () => {
         const args = [path.join(config.outputDir, 'main/index.js')];
@@ -42,13 +35,39 @@ const getMain = () => {
         electron.stderr.on('data', (message) => {
           log.error(message, { label: 'electron' });
         });
-        electron.on('close', () => process.exit(0));
+        electron.on('close', () => {
+          if (restarting) {
+            startElectron();
+            restarting = false;
+          } else {
+            process.exit(0);
+          }
+        });
         electron.on('error', () => process.exit(1));
-        await electron;
+      };
+
+      const startESBuild = async () => {
+        const cfg = await getESBuildConfig({
+          watch: {
+            onRebuild(error) {
+              if (error) {
+                log.error(`watch build failed:\n${log.stringify(error)}`, { label: 'esbuild' });
+              } else {
+                restarting = true;
+                electron.kill();
+              }
+            },
+          },
+        });
+        log.info(
+          `Starting ${chalk.bold('esbuild')} build with config: ${log.stringify(cfg, true)}`,
+          { verbose: true }
+        );
+        esbuild = await esBuild(cfg);
       };
 
       await startESBuild();
-      await startElectron();
+      startElectron();
     },
   };
 };
