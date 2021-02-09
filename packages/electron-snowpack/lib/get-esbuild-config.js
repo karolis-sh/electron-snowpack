@@ -32,11 +32,11 @@ module.exports = async (more) => {
     format: 'cjs',
     ...(dev
       ? {
-          entryPoints: await promisify(glob)('src/main/**/*.js'),
+          entryPoints: await promisify(glob)('src/main/**/*.[jt]s'),
           outdir: path.join(config.outputDir, 'main'),
         }
       : {
-          entryPoints: ['src/main/index.js'],
+          entryPoints: await promisify(glob)('src/main/index.[jt]s'),
           outfile: path.join(config.outputDir, 'main/index.js'),
           bundle: true,
           external: ['electron'],
