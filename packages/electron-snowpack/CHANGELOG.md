@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.4.0...electron-snowpack@0.5.0) (2021-02-09)
+
+
+### Features
+
+* add TypeScript support for src/main ([4328c71](https://github.com/karolis-sh/electron-snowpack/commit/4328c712ab64e5f9bb7afbc835395d7ddf096bbd))
+
+
+
+
+
 # [0.4.0](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.3.1...electron-snowpack@0.4.0) (2021-02-04)
 
 
