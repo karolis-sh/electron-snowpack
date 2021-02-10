@@ -18,6 +18,7 @@
   "scripts": {
     "build": "lerna run build --ignore @playground/* --parallel",
     "commit": "npx cz",
+    "clean": "lerna run --parallel clean",
     "format": "run-p format:*",
     "format:package.json": "sort-package-json package.json packages/*/package.json examples/*/package.json",
     "format:prettier": "prettier --write '**/*.*'",
@@ -26,7 +27,6 @@
     "lint:js": "eslint .",
     "lint:md": "markdownlint-cli2 '**/*.md' '!node_modules' '!**/node_modules' '!**/CHANGELOG.md'",
     "prepublish": "cp README.md packages/electron-snowpack",
-    "purge": "lerna run --parallel clean; lerna clean",
     "qa": "run-p lint",
     "release": "yarn; run-p qa build; yarn lerna publish --no-private --conventional-commits --create-release github --no-commit-hooks"
   },
