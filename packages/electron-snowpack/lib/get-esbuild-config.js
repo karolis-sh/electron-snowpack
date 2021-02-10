@@ -39,6 +39,7 @@ module.exports = async (more) => {
           entryPoints: await promisify(glob)('src/main/index.[jt]s'),
           outfile: path.join(config.outputDir, 'main/index.js'),
           bundle: true,
+          minify: true,
           external: ['electron'],
         }),
     define,
