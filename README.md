@@ -24,7 +24,7 @@ docs.
 
 ## Features
 
-- ✅ esbuild for `main` (Live Reload)
+- ✅ esbuild for `main` (TypeScript, Live Reload)
 - ✅ Snowpack for `renderer` (TypeScript, HMR + Fast Refresh, plugins, etc.)
 - ✅ `.env` variables
 - ✅ Ability to extend `snowpack.config.js` and `tsconfig.json`
