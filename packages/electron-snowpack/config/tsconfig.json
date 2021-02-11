@@ -7,7 +7,6 @@
     "moduleResolution": "node",
     "jsx": "preserve",
     "noEmit": true,
-    "forceConsistentCasingInFileNames": true,
-    "types": ["snowpack-env"]
+    "forceConsistentCasingInFileNames": true
   }
 }
