@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.5.0...electron-snowpack@0.6.0) (2021-02-11)
+
+
+### Features
+
+* add minification for main ([aea70e0](https://github.com/karolis-sh/electron-snowpack/commit/aea70e041d7e55cda20d0f565fbe270f80dbeb3c)), closes [#23](https://github.com/karolis-sh/electron-snowpack/issues/23)
+
+
+
+
+
 # [0.5.0](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.4.0...electron-snowpack@0.5.0) (2021-02-09)
 
 
