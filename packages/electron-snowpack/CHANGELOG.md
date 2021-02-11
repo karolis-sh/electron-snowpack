@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.1](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.6.0...electron-snowpack@0.6.1) (2021-02-11)
+
+
+### Bug Fixes
+
+* remove explicit snowpack env type definition ([4995dc6](https://github.com/karolis-sh/electron-snowpack/commit/4995dc6692a21955a61b104d48f9d2d3961a95e2))
+
+
+
+
+
 # [0.6.0](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.5.0...electron-snowpack@0.6.0) (2021-02-11)
 
 
