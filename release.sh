@@ -1,9 +1,14 @@
-#!/bin/bash
+#!/bin/sh
 
 set -a; source .env.local; set +a
 
 if [ -z "$GH_TOKEN" ]; then
     echo "🚨 Missing GH_TOKEN env variable"
+    exit 1
+fi
+
+if [ -z "$(npm whoami)" ]; then
+    echo "🚨 Not logged in to npm"
     exit 1
 fi
 
