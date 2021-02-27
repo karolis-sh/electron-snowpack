@@ -54,7 +54,7 @@ const getMain = () => {
                 log.error(`watch build failed:\n${log.stringify(error)}`, { label: 'esbuild' });
               } else {
                 restarting = true;
-                electron.kill();
+                if (electron) electron.kill();
               }
             },
           },

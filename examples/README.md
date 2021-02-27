@@ -10,6 +10,9 @@
 - [`electron-natives`](electron-natives) - how to use Electron/Node native methods
 - [`multiple-renderers`](multiple-renderers) - how to use multiple renderer
   entry points (e.g. `/loading.html` + `/index.html`)
+- [`commons-alias`](commons-alias) - how to setup commons as an alias folder
+- [`commons-alias-typescript`](commons-alias-typescript) - how to setup commons
+  as an alias folder + TypeScript
 
 ## Commands
 
