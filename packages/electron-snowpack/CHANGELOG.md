@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.7.0...electron-snowpack@0.7.1) (2021-02-27)
+
+
+### Bug Fixes
+
+* prevent console error on very fast initial main rebuild ([2262da2](https://github.com/karolis-sh/electron-snowpack/commit/2262da24c2ffbff630193b7054c2a374d092c459))
+* unify dev and build src/main esbuild dependency bundling ([c68733a](https://github.com/karolis-sh/electron-snowpack/commit/c68733a06f038b561903b32605cb3649fff9b1d4)), closes [#20](https://github.com/karolis-sh/electron-snowpack/issues/20) [#32](https://github.com/karolis-sh/electron-snowpack/issues/32)
+
+
+
+
+
 # [0.7.0](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.6.1...electron-snowpack@0.7.0) (2021-02-24)
 
 
