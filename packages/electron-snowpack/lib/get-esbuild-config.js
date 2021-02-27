@@ -30,20 +30,13 @@ module.exports = async (more) => {
   return {
     platform: 'node',
     format: 'cjs',
-    ...(dev
-      ? {
-          entryPoints: await promisify(glob)('src/main/**/*.[jt]s'),
-          outdir: path.join(config.outputDir, 'main'),
-        }
-      : {
-          entryPoints: await promisify(glob)('src/main/index.[jt]s'),
-          outfile: path.join(config.outputDir, 'main/index.js'),
-          bundle: true,
-          minify: true,
-          external: ['electron'],
-        }),
+    entryPoints: await promisify(glob)('src/main/index.[jt]s'),
+    outfile: path.join(config.outputDir, 'main/index.js'),
+    bundle: true,
+    external: ['electron'],
     define,
     logLevel,
+    ...(dev ? {} : { minify: true }),
     ...more,
   };
 };
