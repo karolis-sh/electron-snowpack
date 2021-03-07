@@ -7,6 +7,6 @@ module.exports = {
   baseHref: '.',
   rendererBaseHref: 'dist',
   outputDir: 'dist',
-  snowpackPort: 9510,
+  snowpackPort: Number.parseInt(process.env.ELECTRON_SNOWPACK_PORT, 10) || 61016,
   isTS,
 };

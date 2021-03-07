@@ -54,6 +54,10 @@ with the built app (all on `main` and a subset for `renderer`). See
 Snowpack's [Environment Variables](https://www.snowpack.dev/reference/environment-variables)
 documentation to learn more.
 
+Also you can adjust the way `electron-snowpack` itself works via environment variables:
+
+- `ELECTRON_SNOWPACK_PORT` - the default Snowpack port
+
 ### TypeScript
 
 For a minimal setup to get TypeScript working for `renderer` have a root `tsconfig.json`:
