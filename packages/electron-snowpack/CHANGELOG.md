@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.7.1...electron-snowpack@0.8.0) (2021-03-07)
+
+
+### Features
+
+* add ability to change default Snowpack port via ELECTRON_SNOWPACK_PORT env variable ([7255c46](https://github.com/karolis-sh/electron-snowpack/commit/7255c46684728d7441ab7ab3cccf47273b795294)), closes [#35](https://github.com/karolis-sh/electron-snowpack/issues/35)
+
+
+
+
+
 ## [0.7.1](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.7.0...electron-snowpack@0.7.1) (2021-02-27)
 
 
