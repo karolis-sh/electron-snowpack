@@ -30,6 +30,6 @@
     "snowpack": "^3.0.11"
   },
   "peerDependencies": {
-    "electron": "^11.0.0"
+    "electron": "*"
   }
 }
