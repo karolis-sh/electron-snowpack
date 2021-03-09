@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.8.0...electron-snowpack@0.8.1) (2021-03-09)
+
+
+### Bug Fixes
+
+* refactor getAssetURL to not use deprecated url method ([f9e2c85](https://github.com/karolis-sh/electron-snowpack/commit/f9e2c8588b942d4d65b962c95268e5f052699ca8))
+* resolve electron dependensy version warnings ([1df4858](https://github.com/karolis-sh/electron-snowpack/commit/1df4858ddadaf6d56c6f913fac9db1c3b105c128))
+
+
+
+
+
 # [0.8.0](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.7.1...electron-snowpack@0.8.0) (2021-03-07)
 
 
