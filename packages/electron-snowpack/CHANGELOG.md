@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.8.1...electron-snowpack@0.9.0) (2021-03-24)
+
+
+### Features
+
+* update esbuild config to support building multiple files for main ([#41](https://github.com/karolis-sh/electron-snowpack/issues/41)) ([8b60c0c](https://github.com/karolis-sh/electron-snowpack/commit/8b60c0cf52110abe1e02725086156121ca9b17b2))
+
+
+
+
+
 ## [0.8.1](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.8.0...electron-snowpack@0.8.1) (2021-03-09)
 
 
