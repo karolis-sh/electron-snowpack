@@ -6,7 +6,7 @@
   "scripts": {
     "build": "electron-snowpack build",
     "clean": "rm -rf node_modules/.cache/snowpack; electron-snowpack clean",
-    "dev": "electron-snowpack dev",
+    "dev": "electron-snowpack dev -- --enable-logging --js-flags='--use-strict'",
     "dist": "electron-builder",
     "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
     "open": "open dist/mac/playground.app",

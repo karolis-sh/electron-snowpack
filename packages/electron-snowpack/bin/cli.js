@@ -27,10 +27,11 @@ program
 program
   .command('dev')
   .description('Develop your project locally')
-  .action(() => {
+  .option('-- <args...>', 'electron arguments')
+  .action((options, command) => {
     process.env.NODE_ENV = 'development';
     require('../lib/init-env');
-    require('../lib/command/dev')();
+    require('../lib/command/dev')(program.args.filter((arg) => arg !== command.name()));
   });
 
 program

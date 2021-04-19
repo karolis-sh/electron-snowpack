@@ -19,11 +19,11 @@ const getMain = () => {
       if (electron && !electron.killed) electron.kill();
       if (esbuild) esbuild.rebuild.dispose();
     },
-    dev: async () => {
+    dev: async (electronArgs) => {
       let restarting = false;
 
       const startElectron = async () => {
-        const args = [path.join(config.outputDir, 'main/index.js')];
+        const args = [path.join(config.outputDir, 'main/index.js'), ...electronArgs];
         log.info(
           `Starting an ${chalk.bold('electron')} process with arguments: ${log.stringify(args)}`,
           { verbose: true }
@@ -90,7 +90,7 @@ const getRenderer = () => {
   };
 };
 
-module.exports = async () => {
+module.exports = async (electronArgs) => {
   const main = getMain();
   const renderer = getRenderer();
 
@@ -110,7 +110,7 @@ module.exports = async () => {
 
   try {
     await renderer.dev();
-    await main.dev();
+    await main.dev(electronArgs);
   } catch (err) {
     log.error(err);
     process.exit(1);
