@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.9.1...electron-snowpack@0.10.0) (2021-04-19)
+
+
+### Features
+
+* support passing electron arguments for dev command ([#47](https://github.com/karolis-sh/electron-snowpack/issues/47)) ([ebf3f94](https://github.com/karolis-sh/electron-snowpack/commit/ebf3f9455507b43b65686cf83dbb9780d6d41835))
+
+
+
+
+
 ## [0.9.1](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.9.0...electron-snowpack@0.9.1) (2021-04-05)
 
 **Note:** Version bump only for package electron-snowpack
