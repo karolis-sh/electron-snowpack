@@ -10,6 +10,7 @@ function createMainWindow() {
     show: false,
     webPreferences: {
       nodeIntegration: true,
+      contextIsolation: false,
     },
   });
 
