@@ -24,6 +24,7 @@
     </style>
   </head>
   <body>
+    <h1>Input Form</h1>
     <form onsubmit="return submit_form(this);">
       <label for="name">Name:</label><br />
       <input type="text" id="name" name="name" /><br />
@@ -32,6 +33,10 @@
       <input type="submit" value="Submit" />
       <button type="button" onclick="clear_data()">Clear</button>
     </form>
+    <h2>Storage Content</h2>
+    <code>
+      <pre id="storage"></pre>
+    </code>
     <script type="module" src="%SNOWPACK_PUBLIC_RENDERER_BASE_HREF%/index.js"></script>
   </body>
 </html>

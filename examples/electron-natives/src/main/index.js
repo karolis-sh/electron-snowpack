@@ -1,6 +1,8 @@
 import { app, BrowserWindow } from 'electron';
 import { getAssetURL } from 'electron-snowpack';
 
+require('@electron/remote/main').initialize();
+
 let mainWindow;
 
 function createMainWindow() {

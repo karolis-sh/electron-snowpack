@@ -13,6 +13,7 @@
     "try": "run-s clean build dist:dir open"
   },
   "dependencies": {
+    "@electron/remote": "^1.1.0",
     "electron-json-storage": "^4.3.0",
     "electron-snowpack": "*"
   },
