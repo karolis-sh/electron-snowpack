@@ -66,6 +66,6 @@
     "prettier-plugin-svelte": "^2.2.0",
     "pretty-quick": "^3.1.0",
     "sort-package-json": "^1.49.0",
-    "svelte": "^3.32.1"
+    "svelte": "^3.32.0"
   }
 }
