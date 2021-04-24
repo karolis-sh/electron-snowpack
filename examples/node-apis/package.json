@@ -1,0 +1,26 @@
+{
+  "name": "node-apis",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "electron-snowpack build",
+    "clean": "electron-snowpack clean",
+    "dev": "electron-snowpack dev",
+    "dist": "electron-builder",
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
+    "open": "open dist/mac/${npm_package_name}.app",
+    "try": "run-s clean build dist:dir open"
+  },
+  "dependencies": {
+    "electron-snowpack": "*"
+  },
+  "devDependencies": {
+    "electron": "12.0.5",
+    "electron-builder": "^22.10.5",
+    "npm-run-all": "^4.1.5"
+  },
+  "build": {
+    "extends": "electron-snowpack/config/electron-builder.js"
+  }
+}
