@@ -6,7 +6,12 @@ import { ENTRY_FILE } from './constants';
 let mainWindow: BrowserWindow | null | undefined;
 
 function createMainWindow(): BrowserWindow {
-  const window = new BrowserWindow();
+  const window = new BrowserWindow({
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
+    },
+  });
 
   if (process.env.MODE !== 'production') {
     window.webContents.openDevTools();

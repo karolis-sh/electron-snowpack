@@ -1,5 +1,9 @@
 import mwp, { ModuleOutput } from 'module-with-process';
 
+const os = require('os');
+
+document.getElementById('os-type').innerHTML = os.type();
+
 const log = (fn: () => ModuleOutput): void => {
   console.log('mwp :>> ', fn);
 
