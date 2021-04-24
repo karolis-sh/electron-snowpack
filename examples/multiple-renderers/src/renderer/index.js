@@ -11,7 +11,7 @@ const render = () => {
 render();
 
 setTimeout(() => {
-  window._preload_.ping('main-window-initialized');
+  window._preload_.onMainRenderWindowInitialized();
 
   setInterval(() => {
     count += 1;

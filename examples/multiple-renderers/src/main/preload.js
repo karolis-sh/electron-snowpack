@@ -1,5 +1,5 @@
 import { contextBridge, ipcRenderer } from 'electron';
 
 contextBridge.exposeInMainWorld('_preload_', {
-  ping: (...args) => ipcRenderer.send(...args),
+  onMainRenderWindowInitialized: () => ipcRenderer.send('main-window-initialized'),
 });
