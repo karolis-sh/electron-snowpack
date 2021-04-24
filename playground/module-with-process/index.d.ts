@@ -1,4 +1,5 @@
 export type ModuleOutput = {
+  type: 'main' | 'module';
   process_env: string;
   MODE: string;
 };
