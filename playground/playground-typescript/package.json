@@ -13,10 +13,11 @@
     "try": "run-s clean build dist:dir open"
   },
   "dependencies": {
+    "module-with-process": "*",
     "electron-snowpack": "*"
   },
   "devDependencies": {
-    "@types/snowpack-env": "^2.3.3",
+    "@types/snowpack-env": "^2.3.4",
     "electron": "12.0.5",
     "electron-builder": "^22.10.5",
     "typescript": "^4.1.3"

@@ -1,4 +1,4 @@
-import mwp, { ModuleOutput } from 'module-with-process';
+export {};
 
 declare global {
   var _preload_: {
@@ -7,14 +7,6 @@ declare global {
 }
 
 document.getElementById('os-type').innerHTML = window._preload_.getOS();
-
-const log = (fn: () => ModuleOutput): void => {
-  console.log('mwp :>> ', fn);
-
-  console.log(import.meta.env.NODE_ENV);
-};
-
-log(mwp);
 
 document.getElementById('content').innerHTML = 'Edit the files and save to reload.';
 
