@@ -1,3 +1,4 @@
+import path from 'path';
 import { app, BrowserWindow } from 'electron';
 import { getAssetURL } from 'electron-snowpack';
 
@@ -8,9 +9,8 @@ let mainWindow;
 function createMainWindow() {
   const window = new BrowserWindow({
     webPreferences: {
-      nodeIntegration: true,
+      preload: path.join(__dirname, 'preload.js'),
       enableRemoteModule: true,
-      contextIsolation: false,
     },
   });
 

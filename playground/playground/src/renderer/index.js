@@ -1,11 +1,14 @@
 import mwp from 'module-with-process';
 
+const os = require('os');
+
 window.mwp = mwp;
 
-// eslint-disable-next-line no-console
 console.log('mwp :>> ', mwp);
 
 document.getElementById('content').innerHTML = 'Edit the files and save to reload.';
+
+document.getElementById('os-type').innerHTML = os.type();
 
 let count = 0;
 

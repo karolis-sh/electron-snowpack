@@ -1,8 +1,6 @@
 import { app, BrowserWindow } from 'electron';
 import { getAssetURL } from 'electron-snowpack';
 
-import { ENTRY_FILE } from './constants';
-
 let mainWindow;
 
 function createMainWindow() {
@@ -17,7 +15,7 @@ function createMainWindow() {
     window.webContents.openDevTools();
   }
 
-  window.loadURL(getAssetURL(ENTRY_FILE));
+  window.loadURL(getAssetURL('index.html'));
 
   window.on('closed', () => {
     mainWindow = null;

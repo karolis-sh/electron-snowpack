@@ -1,3 +1,4 @@
+import * as path from 'path';
 import { app, BrowserWindow } from 'electron';
 import { getAssetURL } from 'electron-snowpack';
 
@@ -6,7 +7,11 @@ import { ENTRY_FILE } from './constants';
 let mainWindow: BrowserWindow | null | undefined;
 
 function createMainWindow(): BrowserWindow {
-  const window = new BrowserWindow();
+  const window = new BrowserWindow({
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+    },
+  });
 
   if (process.env.MODE !== 'production') {
     window.webContents.openDevTools();

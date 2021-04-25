@@ -1,5 +1,3 @@
-const { ipcRenderer } = require('electron');
-
 document.getElementById('content').innerHTML = 'Edit the files and save to reload.';
 
 let count = 0;
@@ -13,7 +11,7 @@ const render = () => {
 render();
 
 setTimeout(() => {
-  ipcRenderer.send('main-window-initialized');
+  window._preload_.onMainRenderWindowInitialized();
 
   setInterval(() => {
     count += 1;

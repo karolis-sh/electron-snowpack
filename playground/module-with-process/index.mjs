@@ -1,8 +1,8 @@
 const MODE = process.env.NODE_ENV;
 
-module.exports = () => {
+export default () => {
   return {
-    type: 'main',
+    type: 'module',
     process_env: JSON.stringify(process.env),
     MODE,
   };

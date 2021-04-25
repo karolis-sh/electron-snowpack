@@ -1,5 +1,13 @@
 import mwp, { ModuleOutput } from 'module-with-process';
 
+declare global {
+  var _preload_: {
+    getOS: () => string;
+  };
+}
+
+document.getElementById('os-type').innerHTML = window._preload_.getOS();
+
 const log = (fn: () => ModuleOutput): void => {
   console.log('mwp :>> ', fn);
 

@@ -1,7 +1,7 @@
 import { app, BrowserWindow } from 'electron';
 import { getAssetURL } from 'electron-snowpack';
 
-import { ENTRY_FILE } from './constants';
+require('@electron/remote/main').initialize();
 
 let mainWindow;
 
@@ -10,6 +10,8 @@ function createMainWindow() {
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
+      enableRemoteModule: true,
+      webSecurity: false,
     },
   });
 
@@ -17,7 +19,7 @@ function createMainWindow() {
     window.webContents.openDevTools();
   }
 
-  window.loadURL(getAssetURL(ENTRY_FILE));
+  window.loadURL(getAssetURL('index.html'));
 
   window.on('closed', () => {
     mainWindow = null;

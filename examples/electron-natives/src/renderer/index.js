@@ -1,13 +1,10 @@
-const storage = require('electron-json-storage');
-const { dialog } = require('@electron/remote');
-
 const FORM_DATA_KEY = 'form-x';
 
 const previewData = (data) => {
   document.getElementById('storage').innerText = JSON.stringify(data, null, 2);
 };
 
-storage.get(FORM_DATA_KEY, (error, data) => {
+window._preload_.storage.get(FORM_DATA_KEY, (error, data) => {
   if (error) throw error;
 
   previewData(data);
@@ -24,12 +21,12 @@ window.submit_form = (form) => {
     {}
   );
 
-  storage.set(FORM_DATA_KEY, data, (error) => {
+  window._preload_.storage.set(FORM_DATA_KEY, data, (error) => {
     if (error) {
-      dialog.showErrorBox('Oh snap', 'Failed to save form data');
+      window._preload_.dialog.showErrorBox('Oh snap', 'Failed to save form data');
     } else {
       previewData(data);
-      dialog.showMessageBox({ message: 'Form data saved' });
+      window._preload_.dialog.showMessageBox({ message: 'Form data saved' });
     }
   });
 
@@ -37,6 +34,6 @@ window.submit_form = (form) => {
 };
 
 window.clear_data = () => {
-  storage.clear();
+  window._preload_.storage.clear();
   window.location.reload();
 };
