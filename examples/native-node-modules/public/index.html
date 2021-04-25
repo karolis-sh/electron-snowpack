@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Native Node Modules</title>
+    <link rel="stylesheet" type="text/css" href="%SNOWPACK_PUBLIC_RENDERER_BASE_HREF%/index.css" />
+  </head>
+  <body>
+    <div class="App">
+      <section>
+        <h1>Welcome to Native Node Modules!</h1>
+      </section>
+
+      <code>
+        <pre id="error"></pre>
+      </code>
+      <section>
+        <button id="generate" type="button">Select an Image to Generate Colage with sharp</button>
+      </section>
+
+      <div id="colage">
+        <div>
+          <img id="input" />
+          <img id="output-r" />
+        </div>
+        <div>
+          <img id="output-b" />
+          <img id="output-g" />
+        </div>
+      </div>
+    </div>
+    <script type="module" src="%SNOWPACK_PUBLIC_RENDERER_BASE_HREF%/index.js"></script>
+  </body>
+</html>

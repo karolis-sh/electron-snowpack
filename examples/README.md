@@ -10,6 +10,7 @@
 - [`electron-natives`](electron-natives) - how to use Electron/Node native methods
 - [`node-apis`](node-apis) - direct Node APIs usage with enabled `nodeIntegration`
   and disabled `contextIsolation`
+- [`native-node-modules`](native-node-modules) - native Node modules usage
 - [`multiple-renderers`](multiple-renderers) - how to use multiple renderer
   entry points (e.g. `/loading.html` + `/index.html`)
 - [`commons-alias`](commons-alias) - how to setup commons as an alias folder
