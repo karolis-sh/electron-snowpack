@@ -24,7 +24,7 @@
     "format:prettier": "prettier --write '**/*.*'",
     "lerna": "lerna",
     "lint": "run-p lint:*",
-    "lint:js": "eslint .",
+    "lint:js": "eslint . --cache --ignore-path .gitignore",
     "lint:md": "markdownlint-cli2 '**/*.md' '!node_modules' '!**/node_modules' '!**/CHANGELOG.md'",
     "prepublish": "cp README.md packages/electron-snowpack",
     "qa": "run-p lint",
