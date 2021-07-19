@@ -28,25 +28,12 @@
     "lint:md": "markdownlint-cli2 '**/*.md' '!node_modules' '!**/node_modules' '!**/CHANGELOG.md'",
     "prepublish": "cp README.md packages/electron-snowpack",
     "qa": "run-p lint",
-    "release": "yarn && run-p qa build && yarn lerna publish --no-private --conventional-commits --create-release github --no-commit-hooks"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "yarn qa"
-    }
+    "release": "yarn && run-p qa build && yarn lerna publish --no-private --conventional-commits --create-release github --no-commit-hooks",
+    "prepare": "husky install"
   },
   "lint-staged": {
-    "**/package.json": [
-      "sort-package-json"
-    ],
-    "*.{json,md,yml,css,html,svelte,vue}": [
-      "pretty-quick --staged"
-    ],
-    "*.{js}": [
-      "eslint --fix"
-    ]
+    "**/package.json": "sort-package-json",
+    "*.{js,jsx,ts,tsx}": "eslint --fix"
   },
   "config": {
     "commitizen": {
@@ -58,9 +45,9 @@
     "@commitlint/config-conventional": "^12.1.1",
     "@k.sh/eslint-config": "^1.21.0",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^5.0.9",
+    "husky": "^7.0.0",
     "lerna": "^3.22.1",
-    "lint-staged": "^10.5.4",
+    "lint-staged": ">=10",
     "markdownlint-cli2": "^0.1.3",
     "npm-run-all": "^4.1.5",
     "prettier-plugin-svelte": "^2.2.0",
