@@ -24,29 +24,16 @@
     "format:prettier": "prettier --write '**/*.*'",
     "lerna": "lerna",
     "lint": "run-p lint:*",
-    "lint:js": "eslint .",
+    "lint:js": "eslint . --cache --ignore-path .gitignore",
     "lint:md": "markdownlint-cli2 '**/*.md' '!node_modules' '!**/node_modules' '!**/CHANGELOG.md'",
     "prepublish": "cp README.md packages/electron-snowpack",
     "qa": "run-p lint",
-    "release": "yarn && run-p qa build && yarn lerna publish --no-private --conventional-commits --create-release github --no-commit-hooks"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "yarn qa"
-    }
+    "release": "yarn && run-p qa build && yarn lerna publish --no-private --conventional-commits --create-release github --no-commit-hooks",
+    "prepare": "husky install"
   },
   "lint-staged": {
-    "**/package.json": [
-      "sort-package-json"
-    ],
-    "*.{json,md,yml,css,html,svelte,vue}": [
-      "pretty-quick --staged"
-    ],
-    "*.{js}": [
-      "eslint --fix"
-    ]
+    "**/package.json": "sort-package-json",
+    "*.{js}": "eslint --fix"
   },
   "config": {
     "commitizen": {
@@ -54,18 +41,22 @@
     }
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.1.1",
-    "@commitlint/config-conventional": "^12.1.1",
-    "@k.sh/eslint-config": "^1.21.0",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@k.sh/eslint-config": "^1.21.2",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^5.0.9",
-    "lerna": "^3.22.1",
-    "lint-staged": "^10.5.4",
+    "husky": "^7.0.0",
+    "lerna": "^4.0.0",
+    "lint-staged": ">=10",
     "markdownlint-cli2": "^0.1.3",
     "npm-run-all": "^4.1.5",
-    "prettier-plugin-svelte": "^2.2.0",
-    "pretty-quick": "^3.1.0",
-    "sort-package-json": "^1.49.0",
+    "prettier-plugin-svelte": "^2.3.1",
+    "pretty-quick": "^3.1.1",
+    "sort-package-json": "^1.50.0",
     "svelte": "^3.32.0"
+  },
+  "volta": {
+    "node": "14.17.3",
+    "yarn": "1.22.10"
   }
 }

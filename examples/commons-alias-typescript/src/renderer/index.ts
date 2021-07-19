@@ -6,9 +6,9 @@ import { ENTRY_FILE } from '@/commons';
 let count: number = 0;
 
 const render = (): void => {
-  (document.getElementById(
-    'counter'
-  ) as HTMLParagraphElement).innerHTML = `Page has been open for <code>${count}</code> seconds.`;
+  (
+    document.getElementById('counter') as HTMLParagraphElement
+  ).innerHTML = `Page has been open for <code>${count}</code> seconds.`;
 };
 
 render();
