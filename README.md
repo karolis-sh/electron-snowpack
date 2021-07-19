@@ -12,8 +12,6 @@
 
 > Supercharged `Electron` application development with `Snowpack` and `esbuild`
 
-🚧 **Project is in development mode, some edge cases might not work yet** 🚧
-
 ## Getting Started
 
 - `npx electron-snowpack --help`
@@ -29,6 +27,7 @@ docs.
 - ✅ `.env` variables
 - ✅ Ability to extend `snowpack.config.js` and `tsconfig.json`
 - ✅ Config preset for `electron-builder`
+- 🚧 Minification (➕ `main`, ➖ `renderer`)
 
 ### Snowpack
 
