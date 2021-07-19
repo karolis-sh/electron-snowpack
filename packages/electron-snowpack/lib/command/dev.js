@@ -28,7 +28,7 @@ const getMain = () => {
           `Starting an ${chalk.bold('electron')} process with arguments: ${log.stringify(args)}`,
           { verbose: true }
         );
-        electron = execa('electron', args);
+        electron = execa('electron', args, { windowsHide: false });
         electron.stdout.on('data', (message) => {
           log.info(message, { label: 'electron' });
         });
