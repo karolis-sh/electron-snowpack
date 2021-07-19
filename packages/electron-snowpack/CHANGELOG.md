@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.11.1...electron-snowpack@0.12.0) (2021-07-19)
+
+
+### Features
+
+* upgrade snowpack, esbuild and other dependencies ([e9a0b3e](https://github.com/karolis-sh/electron-snowpack/commit/e9a0b3ea472ea0f32efbb1781b89a411db3ea5de))
+
+
+
+
+
 ## [0.11.1](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.11.0...electron-snowpack@0.11.1) (2021-07-19)
 
 
