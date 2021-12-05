@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.1](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.12.0...electron-snowpack@0.12.1) (2021-12-05)
+
+
+### Bug Fixes
+
+* resolve correct asset paths in Windows ([f8a79af](https://github.com/karolis-sh/electron-snowpack/commit/f8a79afd0924dea989ba7d81905ac7edd12e3457)), closes [#58](https://github.com/karolis-sh/electron-snowpack/issues/58)
+
+
+
+
+
 # [0.12.0](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.11.1...electron-snowpack@0.12.0) (2021-07-19)
 
 
