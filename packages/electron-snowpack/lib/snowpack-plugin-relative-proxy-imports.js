@@ -39,7 +39,7 @@ module.exports = () => {
             0,
             relativeProxyImport.length - PROXY_SUFFIX.length
           );
-          if (firstLine === `export default "/${relativeImport}";`) {
+          if (firstLine === `export default "${path.join('/', relativeImport)}";`) {
             await writeFirstLine(filePath, `export default "${relativeImport}";`);
           }
         })
