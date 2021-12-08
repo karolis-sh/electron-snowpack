@@ -34,7 +34,7 @@ module.exports = () => {
       await Promise.all(
         proxies.map(async (filePath) => {
           const firstLine = await readFirstLine(filePath);
-          const relativeProxyImport = path.posix.relative(buildDirectory, filePath);
+          const relativeProxyImport = path.relative(buildDirectory, filePath).replaceAll("\\", "/");
           const relativeImport = relativeProxyImport.substring(
             0,
             relativeProxyImport.length - PROXY_SUFFIX.length
