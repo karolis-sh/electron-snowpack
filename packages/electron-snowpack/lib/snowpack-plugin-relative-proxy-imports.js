@@ -34,12 +34,15 @@ module.exports = () => {
       await Promise.all(
         proxies.map(async (filePath) => {
           const firstLine = await readFirstLine(filePath);
-          const relativeProxyImport = path.relative(buildDirectory, filePath);
+          const relativeProxyImport = path
+            .relative(buildDirectory, filePath)
+            .split(path.sep)
+            .join(path.posix.sep);
           const relativeImport = relativeProxyImport.substring(
             0,
             relativeProxyImport.length - PROXY_SUFFIX.length
           );
-          if (firstLine === `export default "${path.join('/', relativeImport)}";`) {
+          if (firstLine === `export default "/${relativeImport}";`) {
             await writeFirstLine(filePath, `export default "${relativeImport}";`);
           }
         })
