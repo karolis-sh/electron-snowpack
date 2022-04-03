@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.12.2...electron-snowpack@0.13.0) (2022-04-03)
+
+
+### Features
+
+* **main:** add sourcemaps in dev mode ([7f10fda](https://github.com/karolis-sh/electron-snowpack/commit/7f10fdaab6ce2fac02f9ef5c1146e1f5949ca46e)), closes [#65](https://github.com/karolis-sh/electron-snowpack/issues/65)
+
+
+
+
+
 ## [0.12.2](https://github.com/karolis-sh/electron-snowpack/compare/electron-snowpack@0.12.1...electron-snowpack@0.12.2) (2021-12-12)
 
 
