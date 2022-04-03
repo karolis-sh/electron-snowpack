@@ -58,6 +58,7 @@ const getMain = () => {
               }
             },
           },
+          sourcemap: true,
         });
         log.info(
           `Starting ${chalk.bold('esbuild')} build with config: ${log.stringify(cfg, true)}`,
