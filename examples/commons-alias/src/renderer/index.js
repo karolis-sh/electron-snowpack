@@ -2,14 +2,14 @@
 import { ENTRY_FILE } from '@/commons';
 
 document.getElementById(
-  'content'
+  'content',
 ).innerHTML = `Edit the files (public/${ENTRY_FILE}, src/renderer/*) and save to reload.`;
 
 let count = 0;
 
 const render = () => {
   document.getElementById(
-    'counter'
+    'counter',
   ).innerHTML = `Page has been open for <code>${count}</code> seconds.`;
 };
 

@@ -25,14 +25,14 @@ document.getElementById('heap-stats').innerHTML = JSON.stringify(
     total_available_size: formatBytes(stats.total_available_size),
   },
   null,
-  2
+  2,
 );
 
 let count = 0;
 
 const render = () => {
   document.getElementById(
-    'counter'
+    'counter',
   ).innerHTML = `Page has been open for <code>${count}</code> seconds.`;
 };
 

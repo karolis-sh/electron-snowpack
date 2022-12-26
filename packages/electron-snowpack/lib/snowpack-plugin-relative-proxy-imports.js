@@ -30,7 +30,9 @@ module.exports = () => {
   return {
     name: '@electron-snowpack/snowpack-plugin-relative-proxy-import',
     async optimize({ buildDirectory }) {
-      const proxies = await promisify(glob)(path.join(buildDirectory, `**/*${PROXY_SUFFIX}`));
+      const proxies = await promisify(glob)(
+        path.join(buildDirectory, `**/*${PROXY_SUFFIX}`),
+      );
       await Promise.all(
         proxies.map(async (filePath) => {
           const firstLine = await readFirstLine(filePath);
@@ -40,12 +42,15 @@ module.exports = () => {
             .join(path.posix.sep);
           const relativeImport = relativeProxyImport.substring(
             0,
-            relativeProxyImport.length - PROXY_SUFFIX.length
+            relativeProxyImport.length - PROXY_SUFFIX.length,
           );
           if (firstLine === `export default "/${relativeImport}";`) {
-            await writeFirstLine(filePath, `export default "${relativeImport}";`);
+            await writeFirstLine(
+              filePath,
+              `export default "${relativeImport}";`,
+            );
           }
-        })
+        }),
       );
     },
   };
