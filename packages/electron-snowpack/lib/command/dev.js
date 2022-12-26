@@ -1,14 +1,15 @@
 const path = require('path');
+
 const chalk = require('chalk');
-const onExit = require('signal-exit');
-const execa = require('execa');
 const { build: esBuild } = require('esbuild');
+const execa = require('execa');
+const onExit = require('signal-exit');
 const { startServer: startSnowpackServer } = require('snowpack');
 
 const config = require('../../config');
-const log = require('../log');
 const getESBuildConfig = require('../get-esbuild-config');
 const getSnowpackConfig = require('../get-snowpack-config');
+const log = require('../log');
 
 const getMain = () => {
   let electron;

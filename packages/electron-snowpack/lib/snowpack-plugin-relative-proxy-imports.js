@@ -1,7 +1,8 @@
-const path = require('path');
-const { promisify } = require('util');
 const fs = require('fs');
+const path = require('path');
 const readline = require('readline');
+const { promisify } = require('util');
+
 const glob = require('glob');
 
 const PROXY_SUFFIX = '.proxy.js';

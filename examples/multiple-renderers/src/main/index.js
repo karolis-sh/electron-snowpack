@@ -1,4 +1,5 @@
 import path from 'path';
+
 import { app, BrowserWindow, ipcMain } from 'electron';
 import { getAssetURL } from 'electron-snowpack';
 

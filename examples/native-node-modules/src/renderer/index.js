@@ -1,5 +1,6 @@
-const { app, dialog } = require('@electron/remote');
 const path = require('path');
+
+const { app, dialog } = require('@electron/remote');
 const sharp = require('sharp');
 
 const inputEl = document.getElementById('input');

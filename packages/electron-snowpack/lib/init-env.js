@@ -1,5 +1,6 @@
 /* eslint-disable global-require */
 const fs = require('fs');
+
 const { logger } = require('snowpack');
 
 const config = require('../config');

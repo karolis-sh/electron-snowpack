@@ -2,9 +2,9 @@ const chalk = require('chalk');
 const { build: esBuild } = require('esbuild');
 const { build: spBuild } = require('snowpack');
 
-const log = require('../log');
 const getESBuildConfig = require('../get-esbuild-config');
 const getSnowpackConfig = require('../get-snowpack-config');
+const log = require('../log');
 
 module.exports = async () => {
   const buildMain = async () => {
