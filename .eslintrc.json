@@ -2,10 +2,12 @@
   "extends": ["plugin:@k.sh/esnext", "plugin:@k.sh/prettier"],
   "overrides": [
     {
-      "files": ["./*.js"],
-      "env": {
-        "node": true
-      }
+      "files": ["./*.js", "./.*.js"],
+      "extends": [
+        "plugin:@k.sh/esnext",
+        "plugin:@k.sh/node",
+        "plugin:@k.sh/prettier"
+      ]
     }
   ]
 }

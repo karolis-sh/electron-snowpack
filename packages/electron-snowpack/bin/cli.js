@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable global-require */
 
 const { program } = require('commander');
 
