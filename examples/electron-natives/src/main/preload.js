@@ -1,5 +1,5 @@
-import { contextBridge } from 'electron';
 import { dialog } from '@electron/remote';
+import { contextBridge } from 'electron';
 import storage from 'electron-json-storage';
 
 contextBridge.exposeInMainWorld('_preload_', {

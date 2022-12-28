@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable global-require */
 
 const { program } = require('commander');
 
@@ -31,7 +30,9 @@ program
   .action((options, command) => {
     process.env.NODE_ENV = 'development';
     require('../lib/init-env');
-    require('../lib/command/dev')(program.args.filter((arg) => arg !== command.name()));
+    require('../lib/command/dev')(
+      program.args.filter((arg) => arg !== command.name()),
+    );
   });
 
 program

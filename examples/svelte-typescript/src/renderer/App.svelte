@@ -19,7 +19,12 @@
     <p>Edit <code>src/renderer/App.svelte</code> and save to reload.</p>
     <p>Page has been open for <code>{count}</code> seconds.</p>
     <p>
-      <a class="App-link" href="https://svelte.dev" target="_blank" rel="noopener noreferrer">
+      <a
+        class="App-link"
+        href="https://svelte.dev"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Learn Svelte
       </a>
     </p>

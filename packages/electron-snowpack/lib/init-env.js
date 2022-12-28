@@ -1,5 +1,5 @@
-/* eslint-disable global-require */
 const fs = require('fs');
+
 const { logger } = require('snowpack');
 
 const config = require('../config');
@@ -36,7 +36,7 @@ dotenvFiles.forEach((dotenvFile) => {
     require('dotenv-expand')(
       require('dotenv').config({
         path: dotenvFile,
-      })
+      }),
     );
   }
 });

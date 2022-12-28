@@ -1,9 +1,13 @@
 {
-  "extends": ["@k.sh/eslint-config"],
-  "env": {
-    "node": true
-  },
-  "parserOptions": {
-    "ecmaVersion": 2020
-  }
+  "extends": ["plugin:@k.sh/esnext", "plugin:@k.sh/prettier"],
+  "overrides": [
+    {
+      "files": ["./*.js", "./.*.js"],
+      "extends": [
+        "plugin:@k.sh/esnext",
+        "plugin:@k.sh/node",
+        "plugin:@k.sh/prettier"
+      ]
+    }
+  ]
 }

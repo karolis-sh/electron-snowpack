@@ -1,5 +1,6 @@
 const path = require('path');
 const { promisify } = require('util');
+
 const rimraf = require('rimraf');
 
 const config = require('../../config');

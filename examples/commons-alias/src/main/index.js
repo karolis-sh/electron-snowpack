@@ -1,5 +1,6 @@
 import { app, BrowserWindow } from 'electron';
 import { getAssetURL } from 'electron-snowpack';
+
 // eslint-disable-next-line import/no-unresolved
 import { ENTRY_FILE } from '@/commons';
 

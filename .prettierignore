@@ -12,6 +12,10 @@
 !*.tsx
 !*.svelte
 !*.vue
+!*.sh
+!*.gitignore
+!*.env
+!*.env.*
 
 # npm files
 node_modules
@@ -20,3 +24,4 @@ package.json
 # project
 dist
 CHANGELOG.md
+.husky/_/

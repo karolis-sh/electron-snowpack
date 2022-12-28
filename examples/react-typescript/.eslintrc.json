@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "plugin:@k.sh/typescript",
+    "plugin:@k.sh/react",
+    "plugin:@k.sh/prettier"
+  ]
+}

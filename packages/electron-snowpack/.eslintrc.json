@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "plugin:@k.sh/esnext",
+    "plugin:@k.sh/node",
+    "plugin:@k.sh/prettier"
+  ],
+  "rules": {
+    "no-process-exit": "warn"
+  }
+}

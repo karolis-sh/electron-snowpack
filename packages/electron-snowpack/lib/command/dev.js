@@ -1,14 +1,15 @@
 const path = require('path');
+
 const chalk = require('chalk');
-const onExit = require('signal-exit');
-const execa = require('execa');
 const { build: esBuild } = require('esbuild');
+const execa = require('execa');
+const onExit = require('signal-exit');
 const { startServer: startSnowpackServer } = require('snowpack');
 
 const config = require('../../config');
-const log = require('../log');
 const getESBuildConfig = require('../get-esbuild-config');
 const getSnowpackConfig = require('../get-snowpack-config');
+const log = require('../log');
 
 const getMain = () => {
   let electron;
@@ -23,10 +24,15 @@ const getMain = () => {
       let restarting = false;
 
       const startElectron = async () => {
-        const args = [path.join(config.outputDir, 'main/index.js'), ...electronArgs];
+        const args = [
+          path.join(config.outputDir, 'main/index.js'),
+          ...electronArgs,
+        ];
         log.info(
-          `Starting an ${chalk.bold('electron')} process with arguments: ${log.stringify(args)}`,
-          { verbose: true }
+          `Starting an ${chalk.bold(
+            'electron',
+          )} process with arguments: ${log.stringify(args)}`,
+          { verbose: true },
         );
         electron = execa('electron', args, { windowsHide: false });
         electron.stdout.on('data', (message) => {
@@ -51,7 +57,9 @@ const getMain = () => {
           watch: {
             onRebuild(error) {
               if (error) {
-                log.error(`watch build failed:\n${log.stringify(error)}`, { label: 'esbuild' });
+                log.error(`watch build failed:\n${log.stringify(error)}`, {
+                  label: 'esbuild',
+                });
               } else {
                 restarting = true;
                 if (electron) electron.kill();
@@ -61,8 +69,11 @@ const getMain = () => {
           sourcemap: true,
         });
         log.info(
-          `Starting ${chalk.bold('esbuild')} build with config: ${log.stringify(cfg, true)}`,
-          { verbose: true }
+          `Starting ${chalk.bold('esbuild')} build with config: ${log.stringify(
+            cfg,
+            true,
+          )}`,
+          { verbose: true },
         );
         esbuild = await esBuild(cfg);
       };
@@ -83,8 +94,11 @@ const getRenderer = () => {
     dev: async () => {
       const cfg = await getSnowpackConfig();
       log.info(
-        `Starting ${chalk.bold('Snowpack')} server with config: ${log.stringify(cfg, true)}`,
-        { verbose: true }
+        `Starting ${chalk.bold('Snowpack')} server with config: ${log.stringify(
+          cfg,
+          true,
+        )}`,
+        { verbose: true },
       );
       snowpack = await startSnowpackServer({ config: cfg });
     },

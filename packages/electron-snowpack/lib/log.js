@@ -24,9 +24,11 @@ const log =
 
     if (process.env.QUIET || (verbose && !process.env.VERBOSE)) return output;
     fn(
-      `${chalk[{ info: 'dim', warn: 'yellow', error: 'red' }[level]](`[${label}]`)} ${message}${
+      `${chalk[{ info: 'dim', warn: 'yellow', error: 'red' }[level]](
+        `[${label}]`,
+      )} ${message}${
         elapsed >= 0 ? chalk.dim(` [${(elapsed / 1000).toFixed(2)}s]`) : ''
-      }`
+      }`,
     );
 
     return output;
